@@ -244,12 +244,12 @@ function shortcode_store_logo(){
 	$author = get_user_by( 'id', $seller );
 	$vendor = dokan()->vendor->get( $author );
 	$email = $author->user_email;
-
-	// print_r($vendor);
-	// exit;
+	
 	?>
 	<div class="store_image" >
-	<img  src="<?php echo $vendor->get_avatar(); ?>" alt="">
+		<a href="<?php echo $vendor->get_shop_url(); ?>">
+			<img  src="<?php echo $vendor->get_avatar(); ?>" alt="">
+		</a>
 	</div>
 	<?php
 	return ob_get_clean();
